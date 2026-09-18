@@ -202,17 +202,13 @@ footer img{height:34px;width:auto}
 .ed-bt{border:1px solid var(--line);background:var(--bg2);color:var(--ink);padding:11px 18px;border-radius:999px;cursor:pointer;font:600 .92rem Figtree,sans-serif;justify-self:start}
 .ed-bt:hover{border-color:var(--ambar)}
 .ed-bt.on{background:var(--ambar);color:#1A1207;border-color:var(--ambar)}
-.qt{display:grid;grid-template-columns:64px minmax(0,1fr) auto auto;align-items:center;gap:14px}
-.qt-foto{padding:0;width:64px;height:64px;border:1px solid var(--line);background:var(--bg3);border-radius:10px;overflow:hidden;cursor:pointer;display:grid;place-items:center}
-.qt-foto img{width:100%;height:100%;object-fit:cover;display:block}
-.qt-foto .sem{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);text-align:center;padding:4px;line-height:1.3}
-.qt-foto:hover{border-color:var(--ambar)}
+.qt{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:16px}
 .qt .n{min-width:0}
 .qt .n .pu{color:var(--ambar);font-size:.84rem}
 .qt .sub-tot{font-weight:600;font-size:1rem;min-width:112px;text-align:right;white-space:nowrap}
 .qt.off{opacity:.45}
 .qt.off .sub-tot{font-weight:400;font-size:.8rem;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em}
-.qt.ed{grid-template-columns:64px minmax(0,1fr) auto auto auto}
+.qt.ed{grid-template-columns:minmax(0,1fr) auto auto auto}
 .qt.ed input{font:inherit;color:var(--ink);background:var(--bg3);border:1px solid var(--line);border-radius:8px;padding:5px 8px}
 .qt.ed input:focus{outline:none;border-color:var(--ambar)}
 .in-nome{width:100%;font-weight:600}
@@ -224,14 +220,6 @@ footer img{height:34px;width:auto}
 .qt-x:hover{color:#FF9A9A;border-color:#FF9A9A}
 .add{width:100%;border:1px dashed var(--line);background:transparent;color:var(--ink2);border-radius:12px;padding:13px;cursor:pointer;font:inherit}
 .add:hover{border-color:var(--ambar);color:var(--ambar)}
-.fb{position:fixed;inset:0;z-index:60;background:rgba(6,12,10,.96);display:grid;place-items:center;padding:24px}
-.fb[hidden]{display:none}
-.fb img{max-width:min(1100px,92vw);max-height:78vh;object-fit:contain;border-radius:12px}
-.fb .fb-cap{position:absolute;bottom:24px;left:16px;right:16px;text-align:center;color:var(--ink2);font-size:.94rem;margin:0}
-.fb button{position:absolute;border:1px solid var(--line);background:rgba(11,21,18,.85);color:var(--ink);width:46px;height:46px;border-radius:50%;cursor:pointer;font-size:1.4rem;line-height:1}
-.fb .fb-x{top:18px;right:18px}
-.fb .fb-p{left:18px;top:50%;margin-top:-23px}
-.fb .fb-n{right:18px;top:50%;margin-top:-23px}
 .inv-res .tot span[data-pp]{color:var(--ambar)}
 .inv-msg{font-size:.86rem;color:var(--ink2);line-height:1.45}
 .inv-msg input{width:100%;margin-top:8px;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg3);color:var(--ink);font-size:.8rem}
@@ -240,11 +228,9 @@ footer img{height:34px;width:auto}
 .ed-link a{display:inline-block;padding:14px 24px;border-radius:999px;background:var(--bg2);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:600}
 .ed-link a:hover{border-color:var(--ambar);color:var(--ambar)}
 @media (max-width:680px){
-.qt,.qt.ed{grid-template-columns:54px minmax(0,1fr);row-gap:12px;align-items:start}
-.qt-foto{width:54px;height:54px}
-.qt .step,.qt .sub-tot,.qt-x{grid-column:2;justify-self:start}
+.qt,.qt.ed{grid-template-columns:minmax(0,1fr);row-gap:12px;align-items:start}
+.qt .step,.qt .sub-tot,.qt-x{justify-self:start}
 .qt .sub-tot{text-align:left;min-width:0}
-.fb button{width:40px;height:40px}
 }
 </style>
 
@@ -331,7 +317,7 @@ footer img{height:34px;width:auto}
 
 <section id="investimento">
   <div class="wrap">
-    <div class="cap-h"><p class="eyebrow">Investimento</p><h2>Item por item, com o valor de cada um</h2><p class="l">Mobiliário, ambientação e a identidade Algar no espaço. Clique na foto para ver o item de perto. Ajuste quantidades, preços e nomes à vontade — o total acompanha na hora.</p></div>
+    <div class="cap-h"><p class="eyebrow">Investimento</p><h2>Item por item, com o valor de cada um</h2><p class="l">Mobiliário, ambientação e a identidade Algar no espaço. Ajuste quantidades, preços e nomes à vontade — o total acompanha na hora. Nada de letra miúda.</p></div>
     <div class="inv" data-inv>
       <div>
         <div class="inv-bl inv-topo">
@@ -358,9 +344,8 @@ footer img{height:34px;width:auto}
     </div>
   </div>
 </section>
-<div class="fb" data-fb hidden><button type="button" class="fb-x" aria-label="Fechar">✕</button><button type="button" class="fb-p" aria-label="Anterior">‹</button><img src="" alt=""><button type="button" class="fb-n" aria-label="Próxima">›</button><p class="fb-cap"></p></div>
-<input type="file" accept="image/*" data-arq-foto hidden><input type="file" accept="application/json,.json" data-arq-prop hidden>
-<script id="inv-dados" type="application/json">{"grupos":[{"id":"mob","titulo":"Mobiliário","sub":"O que o convidado senta, apoia e usa — do acervo da Indaiá, montado no dia."},{"id":"amb","titulo":"Ambientação","sub":"A luz e o clima do luau, do fim de tarde até a última música."},{"id":"ide","titulo":"Identidade Algar","sub":"A marca nova da Algar no espaço, na entrada do encontro."}],"itens":[{"id":"mesaCof","g":"mob","nome":"Mesas do coffee com toalha","sub":"10 lugares","un":"unidade","preco":100000,"qtd":5,"foto":"itens/mesaCof.jpg","mini":"itens/mesaCof-mini.jpg"},{"id":"mesaBuf","g":"mob","nome":"Mesa de coffee e bebidas","sub":"buffet","un":"unidade","preco":150000,"qtd":1,"foto":"itens/mesaBuf.jpg","mini":"itens/mesaBuf-mini.jpg"},{"id":"mesaAlta","g":"mob","nome":"Mesas altas com pufes","sub":"apoio em pé","un":"conjunto","preco":100000,"qtd":4,"foto":"itens/mesaAlta.jpg","mini":"itens/mesaAlta-mini.jpg"},{"id":"lgSalao","g":"mob","nome":"Lounges do salão","sub":"sofás, poltronas e mesa de centro","un":"conjunto","preco":250000,"qtd":3,"foto":"itens/lgSalao.jpg","mini":"itens/lgSalao-mini.jpg"},{"id":"lgAreia","g":"mob","nome":"Lounges de areia com lanternas","sub":"pé na areia, virados para o mar","un":"conjunto","preco":250000,"qtd":5,"foto":"itens/lgAreia.jpg","mini":"itens/lgAreia-mini.jpg"},{"id":"roda","g":"mob","nome":"Roda de pufes e almofadas","sub":"~20 lugares ao redor da fogueira","un":"conjunto","preco":700000,"qtd":1,"foto":"itens/roda.jpg","mini":"itens/roda-mini.jpg"},{"id":"tapete","g":"mob","nome":"Tapetes de palha","sub":"caminho e estar na areia","un":"unidade","preco":50000,"qtd":4,"foto":"","mini":""},{"id":"barApoio","g":"mob","nome":"Bar de apoio do salão","sub":"drinks e café","un":"unidade","preco":150000,"qtd":1,"foto":"","mini":""},{"id":"barPraia","g":"mob","nome":"Bar de praia com cobertura de palha","sub":"balcão do luau","un":"unidade","preco":500000,"qtd":1,"foto":"itens/barPraia.jpg","mini":"itens/barPraia-mini.jpg"},{"id":"bandeira","g":"amb","nome":"Bandeirolas verde e branco","sub":"salão e luau","un":"metro","preco":3500,"qtd":100,"foto":"itens/bandeira.jpg","mini":"itens/bandeira-mini.jpg"},{"id":"varal","g":"amb","nome":"Varais de luz com postes de bambu","sub":"~60 m, 8 postes","un":"conjunto","preco":350000,"qtd":1,"foto":"itens/varal.jpg","mini":"itens/varal-mini.jpg"},{"id":"tocha","g":"amb","nome":"Tochas tiki com combustível","sub":"caminho da areia","un":"unidade","preco":25000,"qtd":20,"foto":"","mini":""},{"id":"fogueira","g":"amb","nome":"Fogueira central","sub":"estrutura, lenha e brigadista","un":"evento","preco":450000,"qtd":1,"foto":"itens/fogueira.jpg","mini":"itens/fogueira-mini.jpg"},{"id":"portico","g":"ide","nome":"Pórtico de entrada verde Algar","sub":"4 × 3 m, com grafismo aplicado","un":"unidade","preco":1500000,"qtd":1,"foto":"itens/portico.jpg","mini":"itens/portico-mini.jpg"}],"params":{"convMin":30,"convMax":200,"validade":"2026-10-18"}}</script>
+<input type="file" accept="application/json,.json" data-arq-prop hidden>
+<script id="inv-dados" type="application/json">{"grupos":[{"id":"mob","titulo":"Mobiliário","sub":"O que o convidado senta, apoia e usa — do acervo da Indaiá, montado no dia."},{"id":"amb","titulo":"Ambientação","sub":"A luz e o clima do luau, do fim de tarde até a última música."},{"id":"ide","titulo":"Identidade Algar","sub":"A marca nova da Algar no espaço, na entrada do encontro."}],"itens":[{"id":"mesaCof","g":"mob","nome":"Mesas do coffee com toalha","sub":"10 lugares","un":"unidade","preco":100000,"qtd":5},{"id":"mesaBuf","g":"mob","nome":"Mesa de coffee e bebidas","sub":"buffet","un":"unidade","preco":150000,"qtd":1},{"id":"mesaAlta","g":"mob","nome":"Mesas altas com pufes","sub":"apoio em pé","un":"conjunto","preco":100000,"qtd":4},{"id":"lgSalao","g":"mob","nome":"Lounges do salão","sub":"sofás, poltronas e mesa de centro","un":"conjunto","preco":250000,"qtd":3},{"id":"lgAreia","g":"mob","nome":"Lounges de areia com lanternas","sub":"pé na areia, virados para o mar","un":"conjunto","preco":250000,"qtd":5},{"id":"roda","g":"mob","nome":"Roda de pufes e almofadas","sub":"~20 lugares ao redor da fogueira","un":"conjunto","preco":700000,"qtd":1},{"id":"tapete","g":"mob","nome":"Tapetes de palha","sub":"caminho e estar na areia","un":"unidade","preco":50000,"qtd":4},{"id":"barApoio","g":"mob","nome":"Bar de apoio do salão","sub":"drinks e café","un":"unidade","preco":150000,"qtd":1},{"id":"barPraia","g":"mob","nome":"Bar de praia com cobertura de palha","sub":"balcão do luau","un":"unidade","preco":500000,"qtd":1},{"id":"bandeira","g":"amb","nome":"Bandeirolas verde e branco","sub":"salão e luau","un":"metro","preco":3500,"qtd":100},{"id":"varal","g":"amb","nome":"Varais de luz com postes de bambu","sub":"~60 m, 8 postes","un":"conjunto","preco":350000,"qtd":1},{"id":"tocha","g":"amb","nome":"Tochas tiki com combustível","sub":"caminho da areia","un":"unidade","preco":25000,"qtd":20},{"id":"fogueira","g":"amb","nome":"Fogueira central","sub":"estrutura, lenha e brigadista","un":"evento","preco":450000,"qtd":1},{"id":"portico","g":"ide","nome":"Pórtico de entrada verde Algar","sub":"4 × 3 m, com grafismo aplicado","un":"unidade","preco":1500000,"qtd":1}],"params":{"convMin":30,"convMax":200,"validade":"2026-10-18"}}</script>
 
 <section id="passeio"><div class="wrap"><div class="cap-h"><p class="eyebrow">Filme</p><h2>Um minuto no Mediterrâneo</h2></div><div class="player"><video controls playsinline preload="metadata" poster="video/poster.jpg"><source src="video/passeio.mp4" type="video/mp4"></video></div></div></section>
 
@@ -420,32 +405,25 @@ footer img{height:34px;width:auto}
     if(d.c)E.conv=d.c;
     (d.r||[]).forEach(function(id){var i=E.itens.map(function(x){return x.id}).indexOf(id);if(i>=0)E.itens.splice(i,1)});
     (d.i||[]).forEach(function(dif){var a=acha(E.itens,dif.id);if(a)Object.keys(dif).forEach(function(k){if(k!=='id')a[k]=dif[k]})});
-    (d.n||[]).forEach(function(n){if(!acha(E.itens,n.id))E.itens.push(Object.assign({sub:'',un:'unidade',foto:'',mini:''},n))});
+    (d.n||[]).forEach(function(n){if(!acha(E.itens,n.id))E.itens.push(Object.assign({sub:'',un:'unidade'},n))});
   }
   function pacote(){
-    var d={c:E.conv,i:[],n:[],r:[]},semFoto=0;
+    var d={c:E.conv,i:[],n:[],r:[]};
     PAD.forEach(function(p){
       var a=acha(E.itens,p.id);
       if(!a){d.r.push(p.id);return;}
       var dif={};
       ['g','nome','sub','un','preco','qtd'].forEach(function(k){if(a[k]!==p[k])dif[k]=a[k]});
-      if(a.foto!==p.foto){
-        if(String(a.foto).slice(0,5)==='data:')semFoto++;
-        else{dif.foto=a.foto;dif.mini=a.mini||a.foto;}
-      }
       if(Object.keys(dif).length){dif.id=p.id;d.i.push(dif)}
     });
     E.itens.forEach(function(a){
       if(acha(PAD,a.id))return;
-      var n={id:a.id,g:a.g,nome:a.nome,sub:a.sub,un:a.un,preco:a.preco,qtd:a.qtd};
-      if(String(a.foto).slice(0,5)==='data:')semFoto++;
-      else if(a.foto){n.foto=a.foto;n.mini=a.mini||a.foto;}
-      d.n.push(n);
+      d.n.push({id:a.id,g:a.g,nome:a.nome,sub:a.sub,un:a.un,preco:a.preco,qtd:a.qtd});
     });
     if(!d.i.length)delete d.i;
     if(!d.n.length)delete d.n;
     if(!d.r.length)delete d.r;
-    return {d:d,semFoto:semFoto,mudou:!!(d.i||d.n||d.r)||E.conv!==100};
+    return {d:d,mudou:!!(d.i||d.n||d.r)||E.conv!==100};
   }
 
   // ---- carregar: o link manda mais que o que ficou guardado no aparelho ----
@@ -473,13 +451,8 @@ footer img{height:34px;width:auto}
 
   // ---- desenho ----
   function linhaHTML(i){
-    var dentro=i.foto
-      ? '<img src="'+esc(i.mini||i.foto)+'" alt="'+esc(i.nome)+'" loading="lazy">'
-      : '<span class="sem">'+(editando?'+ foto':'sem foto')+'</span>';
-    var foto='<button type="button" class="qt-foto'+(i.foto?'':' vazia')+'" data-foto="'+esc(i.id)+'" title="'+
-      (editando?'Trocar a foto':(i.foto?'Ver a foto':'Sem foto'))+'">'+dentro+'</button>';
     if(editando){
-      return '<div class="qt ed'+(i.qtd?'':' off')+'" data-qt="'+esc(i.id)+'">'+foto+
+      return '<div class="qt ed'+(i.qtd?'':' off')+'" data-qt="'+esc(i.id)+'">'+
         '<div class="n">'+
           '<input class="in-nome" data-c="nome" value="'+esc(i.nome)+'" aria-label="Nome do item">'+
           '<input class="in-sub" data-c="sub" value="'+esc(i.sub)+'" placeholder="descrição curta" aria-label="Descrição">'+
@@ -493,7 +466,7 @@ footer img{height:34px;width:auto}
         '<b class="sub-tot"></b>'+
         '<button type="button" class="qt-x" data-remover="'+esc(i.id)+'" title="Apagar este item">apagar</button></div>';
     }
-    return '<div class="qt'+(i.qtd?'':' off')+'" data-qt="'+esc(i.id)+'">'+foto+
+    return '<div class="qt'+(i.qtd?'':' off')+'" data-qt="'+esc(i.id)+'">'+
       '<div class="n"><b>'+esc(i.nome)+'</b>'+(i.sub?'<span>'+esc(i.sub)+'</span>':'')+
       '<span class="pu">'+fmt(i.preco)+' por '+esc(i.un)+'</span></div>'+
       '<div class="step"><button type="button" data-st="'+esc(i.id)+'" data-d="-1" aria-label="Menos">−</button>'+
@@ -537,60 +510,6 @@ footer img{height:34px;width:auto}
     guardar();
   }
 
-  // ---- foto grande ----
-  var fb=doc('[data-fb]'),fbImg=fb.querySelector('img'),fbCap=fb.querySelector('.fb-cap'),lista=[],pos=0;
-  function verFoto(id){
-    lista=E.itens.filter(function(i){return i.foto});
-    if(!lista.length)return;
-    pos=Math.max(0,lista.map(function(i){return i.id}).indexOf(id));
-    mostrarFoto();
-  }
-  function mostrarFoto(){
-    var i=lista[pos];
-    fbImg.src=i.foto;fbImg.alt=i.nome;
-    fbCap.textContent=i.nome+(i.sub?' · '+i.sub:'');
-    fb.hidden=false;document.body.style.overflow='hidden';
-  }
-  function fecharFoto(){fb.hidden=true;fbImg.src='';document.body.style.overflow='';}
-  fb.addEventListener('click',function(e){
-    if(e.target===fb||e.target.closest('.fb-x'))return fecharFoto();
-    if(e.target.closest('.fb-p')){pos=(pos-1+lista.length)%lista.length;mostrarFoto();}
-    if(e.target.closest('.fb-n')){pos=(pos+1)%lista.length;mostrarFoto();}
-  });
-  document.addEventListener('keydown',function(e){
-    if(fb.hidden)return;
-    if(e.key==='Escape')fecharFoto();
-    if(e.key==='ArrowLeft'){pos=(pos-1+lista.length)%lista.length;mostrarFoto();}
-    if(e.key==='ArrowRight'){pos=(pos+1)%lista.length;mostrarFoto();}
-  });
-
-  // ---- trocar a foto de um item ----
-  var arqFoto=doc('[data-arq-foto]'),alvoFoto=null;
-  arqFoto.addEventListener('change',function(){
-    var f=this.files&&this.files[0];this.value='';
-    if(!f||!alvoFoto)return;
-    var it=acha(E.itens,alvoFoto); if(!it)return;
-    var fr=new FileReader();
-    fr.onload=function(){
-      var img=new Image();
-      img.onload=function(){
-        var encolher=function(larg,q){
-          var L=Math.min(larg,img.width),c=document.createElement('canvas');
-          c.width=L;c.height=Math.round(img.height*L/img.width);
-          c.getContext('2d').drawImage(img,0,0,c.width,c.height);
-          return c.toDataURL('image/jpeg',q);
-        };
-        it.foto=encolher(1100,0.78);
-        it.mini=encolher(240,0.7);
-        desenharGrupos();
-        try{localStorage.setItem('algar-proposta',JSON.stringify(E));}
-        catch(e){mensagem('A foto entrou na página, mas não coube na memória do navegador — ela some se você recarregar. Use "Baixar arquivo da proposta" para guardar.');}
-      };
-      img.src=fr.result;
-    };
-    fr.readAsDataURL(f);
-  });
-
   // ---- acoes ----
   function mensagem(txt,valor){
     q('[data-inv-msg]').innerHTML=esc(txt)+(valor?'<input readonly value="'+esc(valor)+'">':'');
@@ -604,14 +523,12 @@ footer img{height:34px;width:auto}
     var base=location.href.split('?')[0].split('#')[0],p=pacote(),partes=[];
     if(p.mudou)partes.push('p='+b64(JSON.stringify(p.d)));
     if(validade!==P.validade)partes.push('val='+validade);
-    return {url:base+(partes.length?'#'+partes.join('&'):''),semFoto:p.semFoto};
+    return base+(partes.length?'#'+partes.join('&'):'');
   }
   function linkar(){
-    var r=urlAtual();
-    copiarTexto(r.url,function(){
-      mensagem('Link copiado. Quem abrir vê exatamente esta proposta — e também pode editar.'+
-        (r.semFoto?' Atenção: '+r.semFoto+(r.semFoto===1?' foto que você subiu fica':' fotos que você subiu ficam')+
-          ' só neste aparelho; para levar junto, use "Baixar arquivo da proposta".':''),r.url);
+    var u=urlAtual();
+    copiarTexto(u,function(){
+      mensagem('Link copiado. Quem abrir vê exatamente esta proposta — e também pode editar.',u);
     });
   }
   function copiarResumo(){
@@ -631,7 +548,7 @@ footer img{height:34px;width:auto}
     var a=document.createElement('a');
     a.href=URL.createObjectURL(b);a.download='proposta-algar.json';a.click();
     setTimeout(function(){URL.revokeObjectURL(a.href)},2000);
-    mensagem('Arquivo baixado, com as fotos incluídas. Quem receber abre em "Abrir arquivo".');
+    mensagem('Arquivo baixado. Quem receber abre em "Abrir arquivo".');
   }
   var arqProp=doc('[data-arq-prop]');
   arqProp.addEventListener('change',function(){
@@ -675,24 +592,17 @@ footer img{height:34px;width:auto}
       else{var i=acha(E.itens,k);if(i)i.qtd=Math.max(0,i.qtd+d);}
       pintarTudo();return;
     }
-    var fo=t.closest('[data-foto]');
-    if(fo){
-      var id=fo.dataset.foto;
-      if(editando){alvoFoto=id;arqFoto.click();}
-      else{var it=acha(E.itens,id);if(it&&it.foto)verFoto(id);}
-      return;
-    }
     var rm=t.closest('[data-remover]');
     if(rm){
-      var it2=acha(E.itens,rm.dataset.remover);
-      if(it2&&confirm('Apagar "'+it2.nome+'" da proposta?')){
-        E.itens.splice(E.itens.indexOf(it2),1);desenharGrupos();
+      var it=acha(E.itens,rm.dataset.remover);
+      if(it&&confirm('Apagar "'+it.nome+'" da proposta?')){
+        E.itens.splice(E.itens.indexOf(it),1);desenharGrupos();
       }
       return;
     }
     var ad=t.closest('[data-add]');
     if(ad){
-      E.itens.push({id:'n'+Date.now().toString(36),g:ad.dataset.add,nome:'Novo item',sub:'',un:'unidade',preco:0,qtd:1,foto:''});
+      E.itens.push({id:'n'+Date.now().toString(36),g:ad.dataset.add,nome:'Novo item',sub:'',un:'unidade',preco:0,qtd:1});
       desenharGrupos();
       var novos=raiz.querySelectorAll('.qt.ed .in-nome');
       var ult=novos[novos.length-1];
