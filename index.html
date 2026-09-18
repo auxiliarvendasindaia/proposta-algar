@@ -196,17 +196,56 @@ footer img{height:34px;width:auto}
 #irp.aberto ul{display:flex}
 #irp ul a{display:block;padding:9px 12px;border-radius:8px;color:var(--ink);text-decoration:none;font-size:.95rem}
 #irp ul a:hover{background:var(--bg3)}
+.inv-topo{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
+.inv-topo>div{display:grid;gap:10px}
+.inv-topo .modo{max-width:320px}
+.ed-bt{border:1px solid var(--line);background:var(--bg2);color:var(--ink);padding:11px 18px;border-radius:999px;cursor:pointer;font:600 .92rem Figtree,sans-serif;justify-self:start}
+.ed-bt:hover{border-color:var(--ambar)}
+.ed-bt.on{background:var(--ambar);color:#1A1207;border-color:var(--ambar)}
+.qt{display:grid;grid-template-columns:64px minmax(0,1fr) auto auto;align-items:center;gap:14px}
+.qt-foto{padding:0;width:64px;height:64px;border:1px solid var(--line);background:var(--bg3);border-radius:10px;overflow:hidden;cursor:pointer;display:grid;place-items:center}
+.qt-foto img{width:100%;height:100%;object-fit:cover;display:block}
+.qt-foto .sem{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);text-align:center;padding:4px;line-height:1.3}
+.qt-foto:hover{border-color:var(--ambar)}
+.qt .n{min-width:0}
 .qt .n .pu{color:var(--ambar);font-size:.84rem}
-.qt .sub-tot{font-weight:600;font-size:1rem;min-width:110px;text-align:right;white-space:nowrap}
-.qt.off{opacity:.42}
-.qt.off .sub-tot{font-weight:400;font-size:.84rem;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em}
+.qt .sub-tot{font-weight:600;font-size:1rem;min-width:112px;text-align:right;white-space:nowrap}
+.qt.off{opacity:.45}
+.qt.off .sub-tot{font-weight:400;font-size:.8rem;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em}
+.qt.ed{grid-template-columns:64px minmax(0,1fr) auto auto auto}
+.qt.ed input{font:inherit;color:var(--ink);background:var(--bg3);border:1px solid var(--line);border-radius:8px;padding:5px 8px}
+.qt.ed input:focus{outline:none;border-color:var(--ambar)}
+.in-nome{width:100%;font-weight:600}
+.in-sub{width:100%;font-size:.86rem}
+.qt.ed .pu{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:4px}
+.in-preco,.in-un{width:112px}
+.in-qtd{width:66px;text-align:center;font:600 1.1rem Figtree,sans-serif}
+.qt-x{border:1px solid var(--line);background:transparent;color:var(--ink3);border-radius:999px;padding:7px 13px;cursor:pointer;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase}
+.qt-x:hover{color:#FF9A9A;border-color:#FF9A9A}
+.add{width:100%;border:1px dashed var(--line);background:transparent;color:var(--ink2);border-radius:12px;padding:13px;cursor:pointer;font:inherit}
+.add:hover{border-color:var(--ambar);color:var(--ambar)}
+.fb{position:fixed;inset:0;z-index:60;background:rgba(6,12,10,.96);display:grid;place-items:center;padding:24px}
+.fb[hidden]{display:none}
+.fb img{max-width:min(1100px,92vw);max-height:78vh;object-fit:contain;border-radius:12px}
+.fb .fb-cap{position:absolute;bottom:24px;left:16px;right:16px;text-align:center;color:var(--ink2);font-size:.94rem;margin:0}
+.fb button{position:absolute;border:1px solid var(--line);background:rgba(11,21,18,.85);color:var(--ink);width:46px;height:46px;border-radius:50%;cursor:pointer;font-size:1.4rem;line-height:1}
+.fb .fb-x{top:18px;right:18px}
+.fb .fb-p{left:18px;top:50%;margin-top:-23px}
+.fb .fb-n{right:18px;top:50%;margin-top:-23px}
 .inv-res .tot span[data-pp]{color:var(--ambar)}
-.inv-msg input{width:100%;margin-top:8px;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg3);color:var(--ink);font-size:.82rem}
+.inv-msg{font-size:.86rem;color:var(--ink2);line-height:1.45}
+.inv-msg input{width:100%;margin-top:8px;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg3);color:var(--ink);font-size:.8rem}
 .inv-nota b{color:var(--ink)}
 .ed-link{margin:0;text-align:center}
 .ed-link a{display:inline-block;padding:14px 24px;border-radius:999px;background:var(--bg2);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:600}
 .ed-link a:hover{border-color:var(--ambar);color:var(--ambar)}
-@media (max-width:560px){.qt{align-items:flex-start}.qt .sub-tot{min-width:0;text-align:left}}
+@media (max-width:680px){
+.qt,.qt.ed{grid-template-columns:54px minmax(0,1fr);row-gap:12px;align-items:start}
+.qt-foto{width:54px;height:54px}
+.qt .step,.qt .sub-tot,.qt-x{grid-column:2;justify-self:start}
+.qt .sub-tot{text-align:left;min-width:0}
+.fb button{width:40px;height:40px}
+}
 </style>
 
 </head>
@@ -260,29 +299,24 @@ footer img{height:34px;width:auto}
         <figure class="cena "><img src="fal-web/05-lateral-oeste-dia.jpg" data-hora="dia" alt="Lateral Algar · Dia" loading="lazy" data-lb="fal-web/05-lateral-oeste-dia.jpg" data-cap="Lateral Algar"><img src="fal-web/05-lateral-oeste-pordosol.jpg" data-hora="pordosol" alt="Lateral Algar · Pôr do sol" loading="lazy" data-lb="fal-web/05-lateral-oeste-pordosol.jpg" data-cap="Lateral Algar"><img src="fal-web/05-lateral-oeste-noite.jpg" data-hora="noite" alt="Lateral Algar · Noite" loading="lazy" data-lb="fal-web/05-lateral-oeste-noite.jpg" data-cap="Lateral Algar"><figcaption>Lateral Algar</figcaption><span class="ilus">Imagem ilustrativa</span></figure>
         <figure class="cena "><img src="fal-web/07-lounges-mar-dia.jpg" data-hora="dia" alt="Lounges e o mar · Dia" loading="lazy" data-lb="fal-web/07-lounges-mar-dia.jpg" data-cap="Lounges e o mar"><img src="fal-web/07-lounges-mar-pordosol.jpg" data-hora="pordosol" alt="Lounges e o mar · Pôr do sol" loading="lazy" data-lb="fal-web/07-lounges-mar-pordosol.jpg" data-cap="Lounges e o mar"><img src="fal-web/07-lounges-mar-noite.jpg" data-hora="noite" alt="Lounges e o mar · Noite" loading="lazy" data-lb="fal-web/07-lounges-mar-noite.jpg" data-cap="Lounges e o mar"><figcaption>Lounges e o mar</figcaption><span class="ilus">Imagem ilustrativa</span></figure>
       </div>
-      <figure class="cena "><img src="fal-web/11-luau-do-deck-dia.jpg" data-hora="dia" alt="Luau nas quadras · Dia" loading="lazy" data-lb="fal-web/11-luau-do-deck-dia.jpg" data-cap="Luau nas quadras"><img src="fal-web/11-luau-do-deck-pordosol.jpg" data-hora="pordosol" alt="Luau nas quadras · Pôr do sol" loading="lazy" data-lb="fal-web/11-luau-do-deck-pordosol.jpg" data-cap="Luau nas quadras"><img src="fal-web/11-luau-do-deck-noite.jpg" data-hora="noite" alt="Luau nas quadras · Noite" loading="lazy" data-lb="fal-web/11-luau-do-deck-noite.jpg" data-cap="Luau nas quadras"><figcaption>Luau nas quadras</figcaption><span class="ilus">Imagem ilustrativa</span></figure>
+      
       <div class="grid2">
-        <figure class="cena "><img src="fal-web/09-luau-fogueira-dia.jpg" data-hora="dia" alt="Fogueira · Dia" loading="lazy" data-lb="fal-web/09-luau-fogueira-dia.jpg" data-cap="Fogueira"><img src="fal-web/09-luau-fogueira-pordosol.jpg" data-hora="pordosol" alt="Fogueira · Pôr do sol" loading="lazy" data-lb="fal-web/09-luau-fogueira-pordosol.jpg" data-cap="Fogueira"><img src="fal-web/09-luau-fogueira-noite.jpg" data-hora="noite" alt="Fogueira · Noite" loading="lazy" data-lb="fal-web/09-luau-fogueira-noite.jpg" data-cap="Fogueira"><figcaption>Fogueira</figcaption><span class="ilus">Imagem ilustrativa</span></figure>
-        <figure class="cena "><img src="fal-web/10-luau-bar-dj-dia.jpg" data-hora="dia" alt="Bar de palha e DJ · Dia" loading="lazy" data-lb="fal-web/10-luau-bar-dj-dia.jpg" data-cap="Bar de palha e DJ"><img src="fal-web/10-luau-bar-dj-pordosol.jpg" data-hora="pordosol" alt="Bar de palha e DJ · Pôr do sol" loading="lazy" data-lb="fal-web/10-luau-bar-dj-pordosol.jpg" data-cap="Bar de palha e DJ"><img src="fal-web/10-luau-bar-dj-noite.jpg" data-hora="noite" alt="Bar de palha e DJ · Noite" loading="lazy" data-lb="fal-web/10-luau-bar-dj-noite.jpg" data-cap="Bar de palha e DJ"><figcaption>Bar de palha e DJ</figcaption><span class="ilus">Imagem ilustrativa</span></figure>
+        
+        
       </div>
-      <figure class="foto foto-larga"><img src="fal-web/joaquina-noite-luau.jpg" alt="A noite na areia" loading="lazy" data-lb="fal-web/joaquina-noite-luau.jpg" data-cap="A noite na areia"></figure>
+      
     </div>
   </div>
 </section>
 
-<section id="algar">
-  <div class="wrap">
-    <div class="cap-h"><p class="eyebrow">Identidade</p><h2>Algar em cada detalhe</h2><p class="l">O pórtico de entrada já está no investimento. Letreiro, totem, credenciamento, kit de boas-vindas, polos e painel de fotos entram sob consulta.</p></div>
-    <div class="tr" data-tr><div class="tr-track"><figure class="tr-item"><img src="fal-web/marca-neon.jpg" alt="Letreiro Algar" loading="lazy" data-lb="fal-web/marca-neon.jpg" data-cap="Letreiro Algar"><figcaption>Letreiro Algar</figcaption></figure><figure class="tr-item"><img src="fal-web/marca-credenciamento.jpg" alt="Credenciamento" loading="lazy" data-lb="fal-web/marca-credenciamento.jpg" data-cap="Credenciamento"><figcaption>Credenciamento</figcaption></figure><figure class="tr-item"><img src="fal-web/marca-kit-boas-vindas.jpg" alt="Kit de boas-vindas" loading="lazy" data-lb="fal-web/marca-kit-boas-vindas.jpg" data-cap="Kit de boas-vindas"><figcaption>Kit de boas-vindas</figcaption></figure><figure class="tr-item"><img src="fal-web/marca-totem.jpg" alt="Totem" loading="lazy" data-lb="fal-web/marca-totem.jpg" data-cap="Totem"><figcaption>Totem</figcaption></figure><figure class="tr-item"><img src="fal-web/marca-polos.jpg" alt="Polos da equipe" loading="lazy" data-lb="fal-web/marca-polos.jpg" data-cap="Polos da equipe"><figcaption>Polos da equipe</figcaption></figure><figure class="tr-item"><img src="fal-web/marca-painel-fotos.jpg" alt="Painel de fotos" loading="lazy" data-lb="fal-web/marca-painel-fotos.jpg" data-cap="Painel de fotos"><figcaption>Painel de fotos</figcaption></figure></div><button type="button" class="tr-nav tr-prev" aria-label="Anterior">‹</button><button type="button" class="tr-nav tr-next" aria-label="Próxima">›</button></div>
-  </div>
-</section>
+
 
 <section id="layout">
   <div class="wrap">
     <div class="cap-h"><p class="eyebrow">Dimensões</p><h2>O espaço visto de cima</h2><p class="l">Para entender o tamanho de cada área e onde fica cada coisa.</p></div>
     <div class="tps">
       <div class="tp" data-tp><div class="tp-fig"><img src="cru/topo-salao.jpg" alt="Salão visto de cima" width="1920" height="1326" loading="lazy"><svg viewBox="0 0 1920 1326" preserveAspectRatio="none"><g class="pt" data-k="0" tabindex="0" aria-label="Plateia · 100 lugares · 10 × 7 m"><circle cx="926" cy="563" r="44" class="pt-halo"/><circle cx="926" cy="563" r="30" class="pt-dot"/><text x="926" y="563" dy=".36em" text-anchor="middle">1</text></g><g class="pt" data-k="1" tabindex="0" aria-label="Palco e LED · 6,2 × 2,2 m"><circle cx="622" cy="516" r="44" class="pt-halo"/><circle cx="622" cy="516" r="30" class="pt-dot"/><text x="622" y="516" dy=".36em" text-anchor="middle">2</text></g><g class="pt" data-k="2" tabindex="0" aria-label="Lounges · 20 × 6 m"><circle cx="998" cy="358" r="44" class="pt-halo"/><circle cx="998" cy="358" r="30" class="pt-dot"/><text x="998" y="358" dy=".36em" text-anchor="middle">3</text></g><g class="pt" data-k="3" tabindex="0" aria-label="Lateral oeste · totens e jardineiras"><circle cx="507" cy="606" r="44" class="pt-halo"/><circle cx="507" cy="606" r="30" class="pt-dot"/><text x="507" y="606" dy=".36em" text-anchor="middle">4</text></g><g class="pt" data-k="4" tabindex="0" aria-label="Lateral leste · convívio e bar"><circle cx="1283" cy="584" r="44" class="pt-halo"/><circle cx="1283" cy="584" r="30" class="pt-dot"/><text x="1283" y="584" dy=".36em" text-anchor="middle">5</text></g><g class="pt" data-k="5" tabindex="0" aria-label="Coffee · 50 lugares"><circle cx="960" cy="1004" r="44" class="pt-halo"/><circle cx="960" cy="1004" r="30" class="pt-dot"/><text x="960" y="1004" dy=".36em" text-anchor="middle">6</text></g><g class="pt" data-k="6" tabindex="0" aria-label="Ativação esportiva · 5,2 × 3,4 m"><circle cx="1340" cy="996" r="44" class="pt-halo"/><circle cx="1340" cy="996" r="30" class="pt-dot"/><text x="1340" y="996" dy=".36em" text-anchor="middle">7</text></g><g class="pt" data-k="7" tabindex="0" aria-label="Praia · frente do salão livre (20 m)"><circle cx="960" cy="122" r="44" class="pt-halo"/><circle cx="960" cy="122" r="30" class="pt-dot"/><text x="960" y="122" dy=".36em" text-anchor="middle">8</text></g></svg></div><div class="tp-leg"><p class="tp-t">Salão visto de cima</p><ul><li class="lg" data-k="0"><b>1</b><span>Plateia · 100 lugares · 10 × 7 m</span></li><li class="lg" data-k="1"><b>2</b><span>Palco e LED · 6,2 × 2,2 m</span></li><li class="lg" data-k="2"><b>3</b><span>Lounges · 20 × 6 m</span></li><li class="lg" data-k="3"><b>4</b><span>Lateral oeste · totens e jardineiras</span></li><li class="lg" data-k="4"><b>5</b><span>Lateral leste · convívio e bar</span></li><li class="lg" data-k="5"><b>6</b><span>Coffee · 50 lugares</span></li><li class="lg" data-k="6"><b>7</b><span>Ativação esportiva · 5,2 × 3,4 m</span></li><li class="lg" data-k="7"><b>8</b><span>Praia · frente do salão livre (20 m)</span></li></ul></div></div><div class="tp" data-tp><div class="tp-fig"><img src="cru/topo-luau.jpg" alt="Luau visto de cima" width="1920" height="1326" loading="lazy"><svg viewBox="0 0 1920 1326" preserveAspectRatio="none"><g class="pt" data-k="0" tabindex="0" aria-label="Quadra 3 · 16 × 8 m · fogueira e roda"><circle cx="956" cy="791" r="44" class="pt-halo"/><circle cx="956" cy="791" r="30" class="pt-dot"/><text x="956" y="791" dy=".36em" text-anchor="middle">1</text></g><g class="pt" data-k="1" tabindex="0" aria-label="Quadra 4 · 16 × 8 m · bar, DJ e lounges"><circle cx="957" cy="514" r="44" class="pt-halo"/><circle cx="957" cy="514" r="30" class="pt-dot"/><text x="957" y="514" dy=".36em" text-anchor="middle">2</text></g><g class="pt" data-k="2" tabindex="0" aria-label="Bar de palha"><circle cx="1178" cy="456" r="44" class="pt-halo"/><circle cx="1178" cy="456" r="30" class="pt-dot"/><text x="1178" y="456" dy=".36em" text-anchor="middle">3</text></g><g class="pt" data-k="3" tabindex="0" aria-label="DJ"><circle cx="796" cy="442" r="44" class="pt-halo"/><circle cx="796" cy="442" r="30" class="pt-dot"/><text x="796" y="442" dy=".36em" text-anchor="middle">4</text></g><g class="pt" data-k="4" tabindex="0" aria-label="Fogueira"><circle cx="956" cy="768" r="44" class="pt-halo"/><circle cx="956" cy="768" r="30" class="pt-dot"/><text x="956" y="768" dy=".36em" text-anchor="middle">5</text></g><g class="pt" data-k="5" tabindex="0" aria-label="Varais de luz · postes de 4 m"><circle cx="960" cy="542" r="44" class="pt-halo"/><circle cx="960" cy="542" r="30" class="pt-dot"/><text x="960" y="542" dy=".36em" text-anchor="middle">6</text></g><g class="pt" data-k="6" tabindex="0" aria-label="Guarda-sóis"><circle cx="1017" cy="228" r="44" class="pt-halo"/><circle cx="1017" cy="228" r="30" class="pt-dot"/><text x="1017" y="228" dy=".36em" text-anchor="middle">7</text></g></svg></div><div class="tp-leg"><p class="tp-t">Luau visto de cima</p><ul><li class="lg" data-k="0"><b>1</b><span>Quadra 3 · 16 × 8 m · fogueira e roda</span></li><li class="lg" data-k="1"><b>2</b><span>Quadra 4 · 16 × 8 m · bar, DJ e lounges</span></li><li class="lg" data-k="2"><b>3</b><span>Bar de palha</span></li><li class="lg" data-k="3"><b>4</b><span>DJ</span></li><li class="lg" data-k="4"><b>5</b><span>Fogueira</span></li><li class="lg" data-k="5"><b>6</b><span>Varais de luz · postes de 4 m</span></li><li class="lg" data-k="6"><b>7</b><span>Guarda-sóis</span></li></ul></div></div><div class="tp" data-tp><div class="tp-fig"><img src="cru/topo-praia.jpg" alt="Praia e lounges vistos de cima" width="1920" height="1326" loading="lazy"><svg viewBox="0 0 1920 1326" preserveAspectRatio="none"><g class="pt" data-k="0" tabindex="0" aria-label="Lounges · 20 × 6 m"><circle cx="1004" cy="833" r="44" class="pt-halo"/><circle cx="1004" cy="833" r="30" class="pt-dot"/><text x="1004" y="833" dy=".36em" text-anchor="middle">1</text></g><g class="pt" data-k="1" tabindex="0" aria-label="Praia · frente do salão livre (20 m)"><circle cx="960" cy="541" r="44" class="pt-halo"/><circle cx="960" cy="541" r="30" class="pt-dot"/><text x="960" y="541" dy=".36em" text-anchor="middle">2</text></g><g class="pt" data-k="2" tabindex="0" aria-label="Guarda-sóis dos vizinhos"><circle cx="52" cy="432" r="44" class="pt-halo"/><circle cx="52" cy="432" r="30" class="pt-dot"/><text x="52" y="432" dy=".36em" text-anchor="middle">3</text></g><g class="pt" data-k="3" tabindex="0" aria-label="Mar"><circle cx="960" cy="48" r="44" class="pt-halo"/><circle cx="960" cy="48" r="30" class="pt-dot"/><text x="960" y="48" dy=".36em" text-anchor="middle">4</text></g></svg></div><div class="tp-leg"><p class="tp-t">Praia e lounges vistos de cima</p><ul><li class="lg" data-k="0"><b>1</b><span>Lounges · 20 × 6 m</span></li><li class="lg" data-k="1"><b>2</b><span>Praia · frente do salão livre (20 m)</span></li><li class="lg" data-k="2"><b>3</b><span>Guarda-sóis dos vizinhos</span></li><li class="lg" data-k="3"><b>4</b><span>Mar</span></li></ul></div></div><div class="tp" data-tp><div class="tp-fig"><img src="cru/topo-geral.jpg" alt="Implantação geral" width="1920" height="1326" loading="lazy"><svg viewBox="0 0 1920 1326" preserveAspectRatio="none"><g class="pt" data-k="0" tabindex="0" aria-label="Salão coberto · 20 × 40 m"><circle cx="758" cy="831" r="44" class="pt-halo"/><circle cx="758" cy="831" r="30" class="pt-dot"/><text x="758" y="831" dy=".36em" text-anchor="middle">1</text></g><g class="pt" data-k="1" tabindex="0" aria-label="Quadra 3 · 16 × 8 m · fogueira e roda"><circle cx="1300" cy="719" r="44" class="pt-halo"/><circle cx="1300" cy="719" r="30" class="pt-dot"/><text x="1300" y="719" dy=".36em" text-anchor="middle">2</text></g><g class="pt" data-k="2" tabindex="0" aria-label="Quadra 4 · 16 × 8 m · bar, DJ e lounges"><circle cx="1272" cy="589" r="44" class="pt-halo"/><circle cx="1272" cy="589" r="30" class="pt-dot"/><text x="1272" y="589" dy=".36em" text-anchor="middle">3</text></g><g class="pt" data-k="3" tabindex="0" aria-label="Quadras 1 e 2 · seguem em jogo"><circle cx="1354" cy="962" r="44" class="pt-halo"/><circle cx="1354" cy="962" r="30" class="pt-dot"/><text x="1354" y="962" dy=".36em" text-anchor="middle">4</text></g><g class="pt" data-k="4" tabindex="0" aria-label="Praia · frente do salão livre (20 m)"><circle cx="808" cy="475" r="44" class="pt-halo"/><circle cx="808" cy="475" r="30" class="pt-dot"/><text x="808" y="475" dy=".36em" text-anchor="middle">5</text></g><g class="pt" data-k="5" tabindex="0" aria-label="Pórtico Algar"><circle cx="973" cy="911" r="44" class="pt-halo"/><circle cx="973" cy="911" r="30" class="pt-dot"/><text x="973" y="911" dy=".36em" text-anchor="middle">6</text></g><g class="pt" data-k="6" tabindex="0" aria-label="Mar"><circle cx="830" cy="276" r="44" class="pt-halo"/><circle cx="830" cy="276" r="30" class="pt-dot"/><text x="830" y="276" dy=".36em" text-anchor="middle">7</text></g></svg></div><div class="tp-leg"><p class="tp-t">Implantação geral</p><ul><li class="lg" data-k="0"><b>1</b><span>Salão coberto · 20 × 40 m</span></li><li class="lg" data-k="1"><b>2</b><span>Quadra 3 · 16 × 8 m · fogueira e roda</span></li><li class="lg" data-k="2"><b>3</b><span>Quadra 4 · 16 × 8 m · bar, DJ e lounges</span></li><li class="lg" data-k="3"><b>4</b><span>Quadras 1 e 2 · seguem em jogo</span></li><li class="lg" data-k="4"><b>5</b><span>Praia · frente do salão livre (20 m)</span></li><li class="lg" data-k="5"><b>6</b><span>Pórtico Algar</span></li><li class="lg" data-k="6"><b>7</b><span>Mar</span></li></ul></div></div>
-      <div class="tp"><div class="tp-fig"><img src="cru/13-planta.jpg" alt="Planta geral" width="1920" height="1326" loading="lazy"><svg viewBox="0 0 1920 1326" preserveAspectRatio="none"><g class="pt pt-link" data-lb="fal-web/02-plateia-teto-pordosol.jpg" data-cap="Salão" tabindex="0" role="button" aria-label="Salão"><circle cx="695" cy="575" r="44" class="pt-halo"/><circle cx="695" cy="575" r="30" class="pt-dot"/><text x="695" y="575" dy=".36em" text-anchor="middle">1</text></g><g class="pt pt-link" data-lb="fal-web/04-do-palco-pordosol.jpg" data-cap="Palco" tabindex="0" role="button" aria-label="Palco"><circle cx="527" cy="535" r="44" class="pt-halo"/><circle cx="527" cy="535" r="30" class="pt-dot"/><text x="527" y="535" dy=".36em" text-anchor="middle">2</text></g><g class="pt pt-link" data-lb="fal-web/11-luau-do-deck-pordosol.jpg" data-cap="Luau" tabindex="0" role="button" aria-label="Luau"><circle cx="1336" cy="553" r="44" class="pt-halo"/><circle cx="1336" cy="553" r="30" class="pt-dot"/><text x="1336" y="553" dy=".36em" text-anchor="middle">3</text></g><g class="pt pt-link" data-lb="fal-web/09-luau-fogueira-pordosol.jpg" data-cap="Fogueira" tabindex="0" role="button" aria-label="Fogueira"><circle cx="1334" cy="672" r="44" class="pt-halo"/><circle cx="1334" cy="672" r="30" class="pt-dot"/><text x="1334" y="672" dy=".36em" text-anchor="middle">4</text></g><g class="pt pt-link" data-lb="fal-web/10-luau-bar-dj-pordosol.jpg" data-cap="Bar de palha" tabindex="0" role="button" aria-label="Bar de palha"><circle cx="1473" cy="451" r="44" class="pt-halo"/><circle cx="1473" cy="451" r="30" class="pt-dot"/><text x="1473" y="451" dy=".36em" text-anchor="middle">5</text></g><g class="pt pt-link" data-lb="fal-web/10-luau-bar-dj-pordosol.jpg" data-cap="DJ" tabindex="0" role="button" aria-label="DJ"><circle cx="1227" cy="411" r="44" class="pt-halo"/><circle cx="1227" cy="411" r="30" class="pt-dot"/><text x="1227" y="411" dy=".36em" text-anchor="middle">6</text></g><g class="pt pt-link" data-lb="fal-web/07-lounges-mar-pordosol.jpg" data-cap="Praia" tabindex="0" role="button" aria-label="Praia"><circle cx="275" cy="88" r="44" class="pt-halo"/><circle cx="275" cy="88" r="30" class="pt-dot"/><text x="275" y="88" dy=".36em" text-anchor="middle">7</text></g><g class="pt pt-link" data-lb="fal-web/14-portico-pordosol.jpg" data-cap="Chegada" tabindex="0" role="button" aria-label="Chegada"><circle cx="929" cy="1017" r="44" class="pt-halo"/><circle cx="929" cy="1017" r="30" class="pt-dot"/><text x="929" y="1017" dy=".36em" text-anchor="middle">8</text></g><g class="pt pt-link" data-lb="fal-web/05-lateral-oeste-pordosol.jpg" data-cap="Ativação Algar" tabindex="0" role="button" aria-label="Ativação Algar"><circle cx="872" cy="771" r="44" class="pt-halo"/><circle cx="872" cy="771" r="30" class="pt-dot"/><text x="872" y="771" dy=".36em" text-anchor="middle">9</text></g><g class="pt pt-link" data-lb="fal-web/11-luau-do-deck-pordosol.jpg" data-cap="Quadras" tabindex="0" role="button" aria-label="Quadras"><circle cx="1334" cy="1017" r="44" class="pt-halo"/><circle cx="1334" cy="1017" r="30" class="pt-dot"/><text x="1334" y="1017" dy=".36em" text-anchor="middle">10</text></g></svg></div><div class="tp-leg"><p class="tp-t">Planta geral · toque em um número para ver a foto</p><ul><li><b>1</b><span>Salão</span></li><li><b>2</b><span>Palco</span></li><li><b>3</b><span>Luau</span></li><li><b>4</b><span>Fogueira</span></li><li><b>5</b><span>Bar de palha</span></li><li><b>6</b><span>DJ</span></li><li><b>7</b><span>Praia</span></li><li><b>8</b><span>Chegada</span></li><li><b>9</b><span>Ativação Algar</span></li><li><b>10</b><span>Quadras</span></li></ul></div></div>
+      <div class="tp"><div class="tp-fig"><img src="cru/13-planta.jpg" alt="Planta geral" width="1920" height="1326" loading="lazy"><svg viewBox="0 0 1920 1326" preserveAspectRatio="none"><g class="pt pt-link" data-lb="fal-web/02-plateia-teto-pordosol.jpg" data-cap="Salão" tabindex="0" role="button" aria-label="Salão"><circle cx="695" cy="575" r="44" class="pt-halo"/><circle cx="695" cy="575" r="30" class="pt-dot"/><text x="695" y="575" dy=".36em" text-anchor="middle">1</text></g><g class="pt pt-link" data-lb="fal-web/04-do-palco-pordosol.jpg" data-cap="Palco" tabindex="0" role="button" aria-label="Palco"><circle cx="527" cy="535" r="44" class="pt-halo"/><circle cx="527" cy="535" r="30" class="pt-dot"/><text x="527" y="535" dy=".36em" text-anchor="middle">2</text></g><g class="pt" tabindex="0" aria-label="Luau"><circle cx="1336" cy="553" r="44" class="pt-halo"/><circle cx="1336" cy="553" r="30" class="pt-dot"/><text x="1336" y="553" dy=".36em" text-anchor="middle">3</text></g><g class="pt" tabindex="0" aria-label="Fogueira"><circle cx="1334" cy="672" r="44" class="pt-halo"/><circle cx="1334" cy="672" r="30" class="pt-dot"/><text x="1334" y="672" dy=".36em" text-anchor="middle">4</text></g><g class="pt" tabindex="0" aria-label="Bar de palha"><circle cx="1473" cy="451" r="44" class="pt-halo"/><circle cx="1473" cy="451" r="30" class="pt-dot"/><text x="1473" y="451" dy=".36em" text-anchor="middle">5</text></g><g class="pt" tabindex="0" aria-label="DJ"><circle cx="1227" cy="411" r="44" class="pt-halo"/><circle cx="1227" cy="411" r="30" class="pt-dot"/><text x="1227" y="411" dy=".36em" text-anchor="middle">6</text></g><g class="pt pt-link" data-lb="fal-web/07-lounges-mar-pordosol.jpg" data-cap="Praia" tabindex="0" role="button" aria-label="Praia"><circle cx="275" cy="88" r="44" class="pt-halo"/><circle cx="275" cy="88" r="30" class="pt-dot"/><text x="275" y="88" dy=".36em" text-anchor="middle">7</text></g><g class="pt pt-link" data-lb="fal-web/14-portico-pordosol.jpg" data-cap="Chegada" tabindex="0" role="button" aria-label="Chegada"><circle cx="929" cy="1017" r="44" class="pt-halo"/><circle cx="929" cy="1017" r="30" class="pt-dot"/><text x="929" y="1017" dy=".36em" text-anchor="middle">8</text></g><g class="pt pt-link" data-lb="fal-web/05-lateral-oeste-pordosol.jpg" data-cap="Ativação Algar" tabindex="0" role="button" aria-label="Ativação Algar"><circle cx="872" cy="771" r="44" class="pt-halo"/><circle cx="872" cy="771" r="30" class="pt-dot"/><text x="872" y="771" dy=".36em" text-anchor="middle">9</text></g><g class="pt" tabindex="0" aria-label="Quadras"><circle cx="1334" cy="1017" r="44" class="pt-halo"/><circle cx="1334" cy="1017" r="30" class="pt-dot"/><text x="1334" y="1017" dy=".36em" text-anchor="middle">10</text></g></svg></div><div class="tp-leg"><p class="tp-t">Planta geral · toque em um número para ver a foto</p><ul><li><b>1</b><span>Salão</span></li><li><b>2</b><span>Palco</span></li><li><b>3</b><span>Luau</span></li><li><b>4</b><span>Fogueira</span></li><li><b>5</b><span>Bar de palha</span></li><li><b>6</b><span>DJ</span></li><li><b>7</b><span>Praia</span></li><li><b>8</b><span>Chegada</span></li><li><b>9</b><span>Ativação Algar</span></li><li><b>10</b><span>Quadras</span></li></ul></div></div>
     </div>
   </div>
 </section>
@@ -297,27 +331,36 @@ footer img{height:34px;width:auto}
 
 <section id="investimento">
   <div class="wrap">
-    <div class="cap-h"><p class="eyebrow">Investimento</p><h2>Item por item, com o valor de cada um</h2><p class="l">Mobiliário, ambientação e a identidade Algar no espaço. Ajuste a quantidade do que quiser — o total acompanha na hora. Nada de letra miúda.</p></div>
+    <div class="cap-h"><p class="eyebrow">Investimento</p><h2>Item por item, com o valor de cada um</h2><p class="l">Mobiliário, ambientação e a identidade Algar no espaço. Clique na foto para ver o item de perto. Ajuste quantidades, preços e nomes à vontade — o total acompanha na hora.</p></div>
     <div class="inv" data-inv>
       <div>
-        <div class="inv-bl">
-          <h3>Convidados</h3>
-          <p class="sub">Serve para mostrar quanto fica por convidado. As quantidades abaixo você ajusta uma a uma.</p>
-          <div class="step"><button type="button" data-st="conv" data-d="-10" aria-label="Menos 10">−</button><input type="number" data-conv min="30" max="200" step="10" value="100" aria-label="Número de convidados"><button type="button" data-st="conv" data-d="10" aria-label="Mais 10">+</button></div>
+        <div class="inv-bl inv-topo">
+          <div>
+            <h3>Convidados</h3>
+            <p class="sub">Serve para mostrar quanto fica por convidado.</p>
+            <div class="step"><button type="button" data-st="conv" data-d="-10" aria-label="Menos 10">−</button><input type="number" data-conv min="30" max="200" step="10" value="100" aria-label="Número de convidados"><button type="button" data-st="conv" data-d="10" aria-label="Mais 10">+</button></div>
+          </div>
+          <div class="modo">
+            <button type="button" class="ed-bt" data-editar aria-pressed="false">Editar a proposta</button>
+            <p class="sub">Qualquer pessoa com este link pode mudar nomes, preços e quantidades, tirar itens e acrescentar novos.</p>
+          </div>
         </div>
         <div data-grupos></div>
       </div>
       <aside class="inv-res">
         <div data-linhas></div>
         <div class="tot"><span>Total para <b data-nconv style="font:inherit">100</b> convidados</span><b data-total>R$ 0</b><span data-pp></span></div>
-        <div class="inv-acoes"><button type="button" class="p" data-link>Copiar link com esta configuração</button><button type="button" data-copiar>Copiar resumo</button></div>
+        <div class="inv-acoes"><button type="button" class="p" data-link>Copiar link com estas alterações</button><button type="button" data-copiar>Copiar resumo</button></div>
+        <div class="inv-acoes inv-arq" hidden><button type="button" data-baixar>Baixar arquivo da proposta</button><button type="button" data-abrir>Abrir arquivo</button><button type="button" data-zerar>Voltar ao original</button></div>
         <p class="inv-nota">Proposta válida até <span data-validade>18/10/2026</span>. <b>Fora deste valor:</b> gastronomia, bar, equipe de serviço, locação do espaço e taxas — na proposta comercial à parte.</p>
         <div class="inv-msg" data-inv-msg></div>
       </aside>
     </div>
   </div>
 </section>
-<script id="inv-dados" type="application/json">{"grupos":[{"id":"mob","titulo":"Mobiliário","sub":"O que o convidado senta, apoia e usa — do acervo da Indaiá, montado no dia.","itens":[{"id":"mesaCof","nome":"Mesas do coffee com toalha","sub":"10 lugares","qtd":5,"un":"unidade","preco":100000},{"id":"mesaBuf","nome":"Mesa de coffee e bebidas","sub":"buffet","qtd":1,"un":"unidade","preco":150000},{"id":"mesaAlta","nome":"Mesas altas com pufes","sub":"apoio em pé","qtd":4,"un":"conjunto","preco":100000},{"id":"lgSalao","nome":"Lounges do salão","sub":"sofás, poltronas e mesa de centro","qtd":3,"un":"conjunto","preco":250000},{"id":"lgAreia","nome":"Lounges de areia com lanternas","sub":"pé na areia, virados para o mar","qtd":5,"un":"conjunto","preco":250000},{"id":"roda","nome":"Roda de pufes e almofadas","sub":"~20 lugares ao redor da fogueira","qtd":1,"un":"conjunto","preco":700000},{"id":"tapete","nome":"Tapetes de palha","sub":"caminho e estar na areia","qtd":4,"un":"unidade","preco":50000},{"id":"barApoio","nome":"Bar de apoio do salão","sub":"drinks e café","qtd":1,"un":"unidade","preco":150000},{"id":"barPraia","nome":"Bar de praia com cobertura de palha","sub":"balcão do luau","qtd":1,"un":"unidade","preco":500000}]},{"id":"amb","titulo":"Ambientação","sub":"A luz e o clima do luau, do fim de tarde até a última música.","itens":[{"id":"bandeira","nome":"Bandeirolas verde e branco","sub":"salão e luau","qtd":100,"un":"metro","preco":3500},{"id":"varal","nome":"Varais de luz com postes de bambu","sub":"~60 m, 8 postes","qtd":1,"un":"conjunto","preco":350000},{"id":"tocha","nome":"Tochas tiki com combustível","sub":"caminho da areia","qtd":20,"un":"unidade","preco":25000},{"id":"fogueira","nome":"Fogueira central","sub":"estrutura, lenha e brigadista","qtd":1,"un":"evento","preco":450000}]},{"id":"ide","titulo":"Identidade Algar","sub":"A marca nova da Algar no espaço, na entrada do encontro.","itens":[{"id":"portico","nome":"Pórtico de entrada verde Algar","sub":"4 × 3 m, com grafismo aplicado","qtd":1,"un":"unidade","preco":1500000}]}],"params":{"convMin":30,"convMax":200,"validade":"2026-10-18"}}</script>
+<div class="fb" data-fb hidden><button type="button" class="fb-x" aria-label="Fechar">✕</button><button type="button" class="fb-p" aria-label="Anterior">‹</button><img src="" alt=""><button type="button" class="fb-n" aria-label="Próxima">›</button><p class="fb-cap"></p></div>
+<input type="file" accept="image/*" data-arq-foto hidden><input type="file" accept="application/json,.json" data-arq-prop hidden>
+<script id="inv-dados" type="application/json">{"grupos":[{"id":"mob","titulo":"Mobiliário","sub":"O que o convidado senta, apoia e usa — do acervo da Indaiá, montado no dia."},{"id":"amb","titulo":"Ambientação","sub":"A luz e o clima do luau, do fim de tarde até a última música."},{"id":"ide","titulo":"Identidade Algar","sub":"A marca nova da Algar no espaço, na entrada do encontro."}],"itens":[{"id":"mesaCof","g":"mob","nome":"Mesas do coffee com toalha","sub":"10 lugares","un":"unidade","preco":100000,"qtd":5,"foto":"itens/mesaCof.jpg","mini":"itens/mesaCof-mini.jpg"},{"id":"mesaBuf","g":"mob","nome":"Mesa de coffee e bebidas","sub":"buffet","un":"unidade","preco":150000,"qtd":1,"foto":"itens/mesaBuf.jpg","mini":"itens/mesaBuf-mini.jpg"},{"id":"mesaAlta","g":"mob","nome":"Mesas altas com pufes","sub":"apoio em pé","un":"conjunto","preco":100000,"qtd":4,"foto":"itens/mesaAlta.jpg","mini":"itens/mesaAlta-mini.jpg"},{"id":"lgSalao","g":"mob","nome":"Lounges do salão","sub":"sofás, poltronas e mesa de centro","un":"conjunto","preco":250000,"qtd":3,"foto":"itens/lgSalao.jpg","mini":"itens/lgSalao-mini.jpg"},{"id":"lgAreia","g":"mob","nome":"Lounges de areia com lanternas","sub":"pé na areia, virados para o mar","un":"conjunto","preco":250000,"qtd":5,"foto":"itens/lgAreia.jpg","mini":"itens/lgAreia-mini.jpg"},{"id":"roda","g":"mob","nome":"Roda de pufes e almofadas","sub":"~20 lugares ao redor da fogueira","un":"conjunto","preco":700000,"qtd":1,"foto":"itens/roda.jpg","mini":"itens/roda-mini.jpg"},{"id":"tapete","g":"mob","nome":"Tapetes de palha","sub":"caminho e estar na areia","un":"unidade","preco":50000,"qtd":4,"foto":"","mini":""},{"id":"barApoio","g":"mob","nome":"Bar de apoio do salão","sub":"drinks e café","un":"unidade","preco":150000,"qtd":1,"foto":"","mini":""},{"id":"barPraia","g":"mob","nome":"Bar de praia com cobertura de palha","sub":"balcão do luau","un":"unidade","preco":500000,"qtd":1,"foto":"itens/barPraia.jpg","mini":"itens/barPraia-mini.jpg"},{"id":"bandeira","g":"amb","nome":"Bandeirolas verde e branco","sub":"salão e luau","un":"metro","preco":3500,"qtd":100,"foto":"itens/bandeira.jpg","mini":"itens/bandeira-mini.jpg"},{"id":"varal","g":"amb","nome":"Varais de luz com postes de bambu","sub":"~60 m, 8 postes","un":"conjunto","preco":350000,"qtd":1,"foto":"itens/varal.jpg","mini":"itens/varal-mini.jpg"},{"id":"tocha","g":"amb","nome":"Tochas tiki com combustível","sub":"caminho da areia","un":"unidade","preco":25000,"qtd":20,"foto":"","mini":""},{"id":"fogueira","g":"amb","nome":"Fogueira central","sub":"estrutura, lenha e brigadista","un":"evento","preco":450000,"qtd":1,"foto":"itens/fogueira.jpg","mini":"itens/fogueira-mini.jpg"},{"id":"portico","g":"ide","nome":"Pórtico de entrada verde Algar","sub":"4 × 3 m, com grafismo aplicado","un":"unidade","preco":1500000,"qtd":1,"foto":"itens/portico.jpg","mini":"itens/portico-mini.jpg"}],"params":{"convMin":30,"convMax":200,"validade":"2026-10-18"}}</script>
 
 <section id="passeio"><div class="wrap"><div class="cap-h"><p class="eyebrow">Filme</p><h2>Um minuto no Mediterrâneo</h2></div><div class="player"><video controls playsinline preload="metadata" poster="video/poster.jpg"><source src="video/passeio.mp4" type="video/mp4"></video></div></div></section>
 
@@ -345,7 +388,7 @@ footer img{height:34px;width:auto}
   lb.addEventListener('click',function(e){if(e.target===lb)fechar();});
   document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')fechar();if(e.key==='ArrowLeft'){idx=(idx-1+lista.length)%lista.length;mostrar();}if(e.key==='ArrowRight'){idx=(idx+1)%lista.length;mostrar();}});
   var irp=document.getElementById('irp'),ul=irp.querySelector('ul'),bt=irp.querySelector('button');
-  var R={abertura:'Início',joaquina:'Praia da Joaquina',encontro:'O encontro',algar:'Algar em cada detalhe',layout:'Visto de cima',editor:'Monte o seu layout',investimento:'Investimento',passeio:'Filme'};
+  var R={abertura:'Início',joaquina:'Praia da Joaquina',encontro:'O encontro',layout:'Visto de cima',editor:'Monte o seu layout',investimento:'Investimento',passeio:'Filme'};
   document.querySelectorAll('section[id],header[id]').forEach(function(s){var a=document.createElement('a');a.href='#'+s.id;a.textContent=R[s.id]||s.id;var li=document.createElement('li');li.appendChild(a);ul.appendChild(li);a.addEventListener('click',function(){irp.classList.remove('aberto')});});
   var top=document.createElement('li');top.innerHTML='<a href="#abertura">↑ Voltar ao topo</a>';ul.appendChild(top);
   bt.addEventListener('click',function(){irp.classList.toggle('aberto')});
@@ -354,104 +397,335 @@ footer img{height:34px;width:auto}
 (function(){
   var raiz=document.querySelector('[data-inv]'); if(!raiz) return;
   var D=JSON.parse(document.getElementById('inv-dados').textContent);
+  var PAD=D.itens, P=D.params;
   var q=function(s){return raiz.querySelector(s)};
+  var doc=function(s){return document.querySelector(s)};
   var fmt=function(c){return 'R$ '+(c/100).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})};
   var fmt0=function(c){return 'R$ '+Math.round(c/100).toLocaleString('pt-BR')};
-  var esc=function(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');};
-  var TODOS=[];D.grupos.forEach(function(g){g.itens.forEach(function(i){i.grupo=g.id;TODOS.push(i)})});
-  var acha=function(id){return TODOS.filter(function(i){return i.id===id})[0]};
-  // ---- estado: convidados + quantidade de cada item (0 = fora da proposta) ----
-  var s={conv:100};TODOS.forEach(function(i){s[i.id]=i.qtd});
-  var padrao=JSON.parse(JSON.stringify(s));
-  var hm=location.hash.match(/(^|[#&])inv=([^&]+)/);
-  if(hm){hm[2].split(',').forEach(function(kv){var p=kv.split(':');if(p.length===2&&p[0] in s){var v=parseInt(p[1],10);if(!isNaN(v)&&v>=0)s[p[0]]=v;}});}
-  else{try{var r0=localStorage.getItem('algar-decor');if(r0){var o=JSON.parse(r0);Object.keys(s).forEach(function(k){if(k in o&&typeof o[k]==='number')s[k]=o[k];});}}catch(e){}}
-  s.conv=Math.max(D.params.convMin,Math.min(D.params.convMax,s.conv));
-  var validade=D.params.validade;
-  var vm=location.hash.match(/(^|[#&])val=(\d{4}-\d{2}-\d{2})/);if(vm)validade=vm[2];
+  var esc=function(t){return String(t==null?'':t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')};
+  var clone=function(o){return JSON.parse(JSON.stringify(o))};
+  var acha=function(l,id){for(var i=0;i<l.length;i++)if(l[i].id===id)return l[i];return null};
+
+  // ---- estado ----
+  var E={conv:100,itens:clone(PAD)};
+  var editando=false;
+
+  function b64(s){var u=new TextEncoder().encode(s),b='';u.forEach(function(c){b+=String.fromCharCode(c)});
+    return btoa(b).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}
+  function deb64(s){var b=atob(s.replace(/-/g,'+').replace(/_/g,'/'));var u=new Uint8Array(b.length);
+    for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return new TextDecoder().decode(u);}
+
+  function aplicar(d){
+    if(!d)return;
+    if(d.c)E.conv=d.c;
+    (d.r||[]).forEach(function(id){var i=E.itens.map(function(x){return x.id}).indexOf(id);if(i>=0)E.itens.splice(i,1)});
+    (d.i||[]).forEach(function(dif){var a=acha(E.itens,dif.id);if(a)Object.keys(dif).forEach(function(k){if(k!=='id')a[k]=dif[k]})});
+    (d.n||[]).forEach(function(n){if(!acha(E.itens,n.id))E.itens.push(Object.assign({sub:'',un:'unidade',foto:'',mini:''},n))});
+  }
+  function pacote(){
+    var d={c:E.conv,i:[],n:[],r:[]},semFoto=0;
+    PAD.forEach(function(p){
+      var a=acha(E.itens,p.id);
+      if(!a){d.r.push(p.id);return;}
+      var dif={};
+      ['g','nome','sub','un','preco','qtd'].forEach(function(k){if(a[k]!==p[k])dif[k]=a[k]});
+      if(a.foto!==p.foto){
+        if(String(a.foto).slice(0,5)==='data:')semFoto++;
+        else{dif.foto=a.foto;dif.mini=a.mini||a.foto;}
+      }
+      if(Object.keys(dif).length){dif.id=p.id;d.i.push(dif)}
+    });
+    E.itens.forEach(function(a){
+      if(acha(PAD,a.id))return;
+      var n={id:a.id,g:a.g,nome:a.nome,sub:a.sub,un:a.un,preco:a.preco,qtd:a.qtd};
+      if(String(a.foto).slice(0,5)==='data:')semFoto++;
+      else if(a.foto){n.foto=a.foto;n.mini=a.mini||a.foto;}
+      d.n.push(n);
+    });
+    if(!d.i.length)delete d.i;
+    if(!d.n.length)delete d.n;
+    if(!d.r.length)delete d.r;
+    return {d:d,semFoto:semFoto,mudou:!!(d.i||d.n||d.r)||E.conv!==100};
+  }
+
+  // ---- carregar: o link manda mais que o que ficou guardado no aparelho ----
+  var hp=location.hash.match(/(^|[#&])p=([^&]+)/);
+  if(hp){try{aplicar(JSON.parse(deb64(hp[2])))}catch(e){}}
+  else{try{var r0=localStorage.getItem('algar-proposta');
+    if(r0){var o=JSON.parse(r0);if(o&&o.itens&&o.itens.length)E=o;}}catch(e){}}
+  E.conv=Math.max(P.convMin,Math.min(P.convMax,E.conv||100));
+  var validade=P.validade;
+  var vm=location.hash.match(/(^|[#&])val=(\d{4}-\d{2}-\d{2})/);
+  if(vm)validade=vm[2];
+  function guardar(){try{localStorage.setItem('algar-proposta',JSON.stringify(E))}catch(e){}}
+
+  // ---- conta ----
   function calc(){
-    var grupos=D.grupos.map(function(g){
-      var linhas=g.itens.filter(function(i){return s[i.id]>0}).map(function(i){
-        return {nome:i.nome+(s[i.id]>1?' × '+s[i.id]:''),valor:s[i.id]*i.preco};
+    var gs=D.grupos.map(function(g){
+      var l=E.itens.filter(function(i){return i.g===g.id&&i.qtd>0}).map(function(i){
+        return {nome:i.nome+(i.qtd>1?' × '+i.qtd:''),valor:i.qtd*i.preco};
       });
-      return {titulo:g.titulo,linhas:linhas,soma:linhas.reduce(function(a,l){return a+l.valor},0)};
+      return {titulo:g.titulo,linhas:l,soma:l.reduce(function(a,x){return a+x.valor},0)};
     }).filter(function(g){return g.linhas.length});
-    var total=grupos.reduce(function(a,g){return a+g.soma},0);
-    return {conv:s.conv,grupos:grupos,total:total,itens:grupos.reduce(function(a,g){return a+g.linhas.length},0)};
+    var total=gs.reduce(function(a,g){return a+g.soma},0);
+    return {gs:gs,total:total,n:gs.reduce(function(a,g){return a+g.linhas.length},0)};
   }
-  function montarGrupos(){
+
+  // ---- desenho ----
+  function linhaHTML(i){
+    var dentro=i.foto
+      ? '<img src="'+esc(i.mini||i.foto)+'" alt="'+esc(i.nome)+'" loading="lazy">'
+      : '<span class="sem">'+(editando?'+ foto':'sem foto')+'</span>';
+    var foto='<button type="button" class="qt-foto'+(i.foto?'':' vazia')+'" data-foto="'+esc(i.id)+'" title="'+
+      (editando?'Trocar a foto':(i.foto?'Ver a foto':'Sem foto'))+'">'+dentro+'</button>';
+    if(editando){
+      return '<div class="qt ed'+(i.qtd?'':' off')+'" data-qt="'+esc(i.id)+'">'+foto+
+        '<div class="n">'+
+          '<input class="in-nome" data-c="nome" value="'+esc(i.nome)+'" aria-label="Nome do item">'+
+          '<input class="in-sub" data-c="sub" value="'+esc(i.sub)+'" placeholder="descrição curta" aria-label="Descrição">'+
+          '<span class="pu">R$ <input class="in-preco" data-c="preco" inputmode="decimal" value="'+
+            (i.preco/100).toFixed(2).replace('.',',')+'" aria-label="Preço"> por '+
+            '<input class="in-un" data-c="un" value="'+esc(i.un)+'" aria-label="Unidade"></span>'+
+        '</div>'+
+        '<div class="step"><button type="button" data-st="'+esc(i.id)+'" data-d="-1" aria-label="Menos">−</button>'+
+        '<input class="in-qtd" data-c="qtd" type="number" min="0" step="1" value="'+i.qtd+'" aria-label="Quantidade">'+
+        '<button type="button" data-st="'+esc(i.id)+'" data-d="1" aria-label="Mais">+</button></div>'+
+        '<b class="sub-tot"></b>'+
+        '<button type="button" class="qt-x" data-remover="'+esc(i.id)+'" title="Apagar este item">apagar</button></div>';
+    }
+    return '<div class="qt'+(i.qtd?'':' off')+'" data-qt="'+esc(i.id)+'">'+foto+
+      '<div class="n"><b>'+esc(i.nome)+'</b>'+(i.sub?'<span>'+esc(i.sub)+'</span>':'')+
+      '<span class="pu">'+fmt(i.preco)+' por '+esc(i.un)+'</span></div>'+
+      '<div class="step"><button type="button" data-st="'+esc(i.id)+'" data-d="-1" aria-label="Menos">−</button>'+
+      '<output>'+i.qtd+'</output>'+
+      '<button type="button" data-st="'+esc(i.id)+'" data-d="1" aria-label="Mais">+</button></div>'+
+      '<b class="sub-tot"></b></div>';
+  }
+  function desenharGrupos(){
     q('[data-grupos]').innerHTML=D.grupos.map(function(g){
+      var its=E.itens.filter(function(i){return i.g===g.id});
       return '<div class="inv-bl"><h3>'+esc(g.titulo)+'</h3><p class="sub">'+esc(g.sub)+'</p><div class="qts">'+
-        g.itens.map(function(i){
-          return '<div class="qt" data-qt="'+i.id+'">'+
-            '<div class="n"><b>'+esc(i.nome)+'</b>'+(i.sub?'<span>'+esc(i.sub)+'</span>':'')+
-            '<span class="pu">'+fmt(i.preco)+' por '+esc(i.un)+'</span></div>'+
-            '<div class="step"><button type="button" data-st="'+i.id+'" data-d="-1" aria-label="Menos">−</button>'+
-            '<output>'+s[i.id]+'</output>'+
-            '<button type="button" data-st="'+i.id+'" data-d="1" aria-label="Mais">+</button></div>'+
-            '<b class="sub-tot"></b></div>';
-        }).join('')+'</div></div>';
+        its.map(linhaHTML).join('')+
+        (editando?'<button type="button" class="add" data-add="'+esc(g.id)+'">+ Acrescentar item em '+esc(g.titulo)+'</button>':'')+
+        '</div></div>';
     }).join('');
+    pintarTudo();
   }
-  function render(){
-    q('[data-conv]').value=s.conv;
-    raiz.querySelectorAll('[data-qt]').forEach(function(el){
-      var i=acha(el.dataset.qt),n=s[i.id];
-      el.querySelector('output').textContent=n;
-      el.querySelector('.sub-tot').textContent=n>0?fmt(n*i.preco):'fora da proposta';
-      el.classList.toggle('off',n===0);
+  function pintarLinha(el){
+    var i=acha(E.itens,el.dataset.qt); if(!i)return;
+    var o=el.querySelector('output'); if(o)o.textContent=i.qtd;
+    var qi=el.querySelector('.in-qtd'); if(qi&&document.activeElement!==qi)qi.value=i.qtd;
+    el.querySelector('.sub-tot').textContent=i.qtd>0?fmt(i.qtd*i.preco):'fora da proposta';
+    el.classList.toggle('off',!i.qtd);
+  }
+  function pintarTudo(){
+    raiz.querySelectorAll('[data-qt]').forEach(pintarLinha);
+    var r=calc(),html='';
+    r.gs.forEach(function(g){
+      html+='<p class="inv-t">'+esc(g.titulo)+'</p>'+g.linhas.map(function(l){
+        return '<div class="ln"><span>'+esc(l.nome)+'</span><b>'+fmt(l.valor)+'</b></div>';
+      }).join('');
     });
-    var r=calc();
-    var html='';
-    r.grupos.forEach(function(g){
-      html+='<p class="inv-t">'+esc(g.titulo)+'</p>';
-      html+=g.linhas.map(function(l){return '<div class="ln"><span>'+esc(l.nome)+'</span><b>'+fmt(l.valor)+'</b></div>'}).join('');
-    });
-    if(!r.total)html='<p class="inv-nota">Nenhum item selecionado. Use o + para montar a proposta.</p>';
+    if(!r.total)html='<p class="inv-nota">Nenhum item na proposta. Use o + para colocar algum de volta.</p>';
     q('[data-linhas]').innerHTML=html;
     q('[data-total]').textContent=fmt0(r.total);
-    q('[data-pp]').textContent=r.total?fmt(Math.round(r.total/r.conv))+' por convidado · '+r.itens+(r.itens===1?' item':' itens'):'';
-    q('[data-nconv]').textContent=r.conv;
-    var v=q('[data-validade]');if(v&&validade){var d=validade.split('-');v.textContent=d.length===3?d[2]+'/'+d[1]+'/'+d[0]:validade;}
-    try{localStorage.setItem('algar-decor',JSON.stringify(s));}catch(e){}
+    q('[data-pp]').textContent=r.total?fmt(Math.round(r.total/E.conv))+' por convidado · '+r.n+(r.n===1?' item':' itens'):'';
+    q('[data-nconv]').textContent=E.conv;
+    var ci=q('[data-conv]'); if(ci&&document.activeElement!==ci)ci.value=E.conv;
+    var v=q('[data-validade]');
+    if(v&&validade){var dd=validade.split('-');v.textContent=dd.length===3?dd[2]+'/'+dd[1]+'/'+dd[0]:validade;}
+    guardar();
   }
-  function invStr(){return Object.keys(s).filter(function(k){return s[k]!==padrao[k]}).map(function(k){return k+':'+s[k]}).join(',')}
-  function urlCliente(){
-    var base=location.href.split('?')[0].split('#')[0];
-    var p=[];var i=invStr();if(i)p.push('inv='+i);if(validade!==D.params.validade)p.push('val='+validade);
-    return base+(p.length?'#'+p.join('&'):'');
+
+  // ---- foto grande ----
+  var fb=doc('[data-fb]'),fbImg=fb.querySelector('img'),fbCap=fb.querySelector('.fb-cap'),lista=[],pos=0;
+  function verFoto(id){
+    lista=E.itens.filter(function(i){return i.foto});
+    if(!lista.length)return;
+    pos=Math.max(0,lista.map(function(i){return i.id}).indexOf(id));
+    mostrarFoto();
   }
-  function mostrar(txt,valor){
-    q('[data-inv-msg]').innerHTML=esc(txt)+'<input readonly value="'+esc(valor)+'">';
-    var c=q('[data-inv-msg] input');if(c){c.addEventListener('focus',function(){this.select()});}
+  function mostrarFoto(){
+    var i=lista[pos];
+    fbImg.src=i.foto;fbImg.alt=i.nome;
+    fbCap.textContent=i.nome+(i.sub?' · '+i.sub:'');
+    fb.hidden=false;document.body.style.overflow='hidden';
   }
-  function copiarTexto(v,ok){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(v).then(ok,ok);}else ok();}
-  function link(){var u=urlCliente();copiarTexto(u,function(){mostrar('Link copiado com esta configuração.',u);});}
-  function copiar(){
-    var r=calc();
-    var t=['Proposta Algar · Mediterrâneo Indaiá · ambientação e mobiliário · '+r.conv+' convidados'];
-    r.grupos.forEach(function(g){t.push('');t.push(g.titulo.toUpperCase());g.linhas.forEach(function(l){t.push('  '+l.nome+' — '+fmt(l.valor))});t.push('  Subtotal: '+fmt(g.soma));});
-    t.push('');t.push('TOTAL: '+fmt(r.total)+'  ('+fmt(Math.round(r.total/r.conv))+' por convidado)');
+  function fecharFoto(){fb.hidden=true;fbImg.src='';document.body.style.overflow='';}
+  fb.addEventListener('click',function(e){
+    if(e.target===fb||e.target.closest('.fb-x'))return fecharFoto();
+    if(e.target.closest('.fb-p')){pos=(pos-1+lista.length)%lista.length;mostrarFoto();}
+    if(e.target.closest('.fb-n')){pos=(pos+1)%lista.length;mostrarFoto();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(fb.hidden)return;
+    if(e.key==='Escape')fecharFoto();
+    if(e.key==='ArrowLeft'){pos=(pos-1+lista.length)%lista.length;mostrarFoto();}
+    if(e.key==='ArrowRight'){pos=(pos+1)%lista.length;mostrarFoto();}
+  });
+
+  // ---- trocar a foto de um item ----
+  var arqFoto=doc('[data-arq-foto]'),alvoFoto=null;
+  arqFoto.addEventListener('change',function(){
+    var f=this.files&&this.files[0];this.value='';
+    if(!f||!alvoFoto)return;
+    var it=acha(E.itens,alvoFoto); if(!it)return;
+    var fr=new FileReader();
+    fr.onload=function(){
+      var img=new Image();
+      img.onload=function(){
+        var encolher=function(larg,q){
+          var L=Math.min(larg,img.width),c=document.createElement('canvas');
+          c.width=L;c.height=Math.round(img.height*L/img.width);
+          c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+          return c.toDataURL('image/jpeg',q);
+        };
+        it.foto=encolher(1100,0.78);
+        it.mini=encolher(240,0.7);
+        desenharGrupos();
+        try{localStorage.setItem('algar-proposta',JSON.stringify(E));}
+        catch(e){mensagem('A foto entrou na página, mas não coube na memória do navegador — ela some se você recarregar. Use "Baixar arquivo da proposta" para guardar.');}
+      };
+      img.src=fr.result;
+    };
+    fr.readAsDataURL(f);
+  });
+
+  // ---- acoes ----
+  function mensagem(txt,valor){
+    q('[data-inv-msg]').innerHTML=esc(txt)+(valor?'<input readonly value="'+esc(valor)+'">':'');
+    var c=q('[data-inv-msg] input'); if(c)c.addEventListener('focus',function(){this.select()});
+  }
+  function copiarTexto(v,ok){
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(v).then(ok,ok);
+    else ok();
+  }
+  function urlAtual(){
+    var base=location.href.split('?')[0].split('#')[0],p=pacote(),partes=[];
+    if(p.mudou)partes.push('p='+b64(JSON.stringify(p.d)));
+    if(validade!==P.validade)partes.push('val='+validade);
+    return {url:base+(partes.length?'#'+partes.join('&'):''),semFoto:p.semFoto};
+  }
+  function linkar(){
+    var r=urlAtual();
+    copiarTexto(r.url,function(){
+      mensagem('Link copiado. Quem abrir vê exatamente esta proposta — e também pode editar.'+
+        (r.semFoto?' Atenção: '+r.semFoto+(r.semFoto===1?' foto que você subiu fica':' fotos que você subiu ficam')+
+          ' só neste aparelho; para levar junto, use "Baixar arquivo da proposta".':''),r.url);
+    });
+  }
+  function copiarResumo(){
+    var r=calc(),t=['Proposta Algar · Mediterrâneo Indaíá · ambientação e mobiliário · '+E.conv+' convidados'];
+    r.gs.forEach(function(g){
+      t.push('');t.push(g.titulo.toUpperCase());
+      g.linhas.forEach(function(l){t.push('  '+l.nome+' — '+fmt(l.valor))});
+      t.push('  Subtotal: '+fmt(g.soma));
+    });
+    t.push('');
+    t.push('TOTAL: '+fmt(r.total)+'  ('+fmt(Math.round(r.total/E.conv))+' por convidado)');
     t.push('Fora deste valor: gastronomia, bar, equipe de serviço, locação do espaço e taxas.');
-    var txt=t.join('\n');
-    copiarTexto(txt,function(){mostrar('Resumo copiado.',urlCliente());});
+    copiarTexto(t.join('\n'),function(){mensagem('Resumo copiado.');});
   }
+  function baixar(){
+    var b=new Blob([JSON.stringify(E,null,1)],{type:'application/json'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(b);a.download='proposta-algar.json';a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href)},2000);
+    mensagem('Arquivo baixado, com as fotos incluídas. Quem receber abre em "Abrir arquivo".');
+  }
+  var arqProp=doc('[data-arq-prop]');
+  arqProp.addEventListener('change',function(){
+    var f=this.files&&this.files[0];this.value='';
+    if(!f)return;
+    var fr=new FileReader();
+    fr.onload=function(){
+      try{
+        var o=JSON.parse(fr.result);
+        if(!o||!o.itens)throw 0;
+        E=o;E.conv=Math.max(P.convMin,Math.min(P.convMax,E.conv||100));
+        desenharGrupos();mensagem('Proposta carregada do arquivo.');
+      }catch(e){mensagem('Esse arquivo não é uma proposta válida.');}
+    };
+    fr.readAsText(f);
+  });
+  function zerar(){
+    if(!confirm('Voltar à proposta original? Tudo o que foi mudado aqui se perde.'))return;
+    E={conv:100,itens:clone(PAD)};
+    try{localStorage.removeItem('algar-proposta')}catch(e){}
+    if(location.hash)history.replaceState(null,'',location.pathname+location.search);
+    desenharGrupos();mensagem('De volta à proposta original.');
+  }
+  function modoEditar(on){
+    editando=on;
+    var b=q('[data-editar]');
+    b.classList.toggle('on',on);
+    b.setAttribute('aria-pressed',on?'true':'false');
+    b.textContent=on?'Pronto — voltar à vista do cliente':'Editar a proposta';
+    q('.inv-arq').hidden=!on;
+    desenharGrupos();
+  }
+
+  // ---- eventos ----
   raiz.addEventListener('click',function(e){
-    var st=e.target.closest('[data-st]');
+    var t=e.target;
+    var st=t.closest('[data-st]');
     if(st){
       var k=st.dataset.st,d=+st.dataset.d;
-      if(k==='conv'){s.conv=Math.max(D.params.convMin,Math.min(D.params.convMax,s.conv+d));}
-      else{var i=acha(k);s[k]=Math.max(0,Math.min(i.qtd*4+20,s[k]+d));}
-      render();return;
+      if(k==='conv')E.conv=Math.max(P.convMin,Math.min(P.convMax,E.conv+d));
+      else{var i=acha(E.itens,k);if(i)i.qtd=Math.max(0,i.qtd+d);}
+      pintarTudo();return;
     }
-    if(e.target.closest('[data-copiar]')){copiar();return;}
-    if(e.target.closest('[data-link]')){link();return;}
+    var fo=t.closest('[data-foto]');
+    if(fo){
+      var id=fo.dataset.foto;
+      if(editando){alvoFoto=id;arqFoto.click();}
+      else{var it=acha(E.itens,id);if(it&&it.foto)verFoto(id);}
+      return;
+    }
+    var rm=t.closest('[data-remover]');
+    if(rm){
+      var it2=acha(E.itens,rm.dataset.remover);
+      if(it2&&confirm('Apagar "'+it2.nome+'" da proposta?')){
+        E.itens.splice(E.itens.indexOf(it2),1);desenharGrupos();
+      }
+      return;
+    }
+    var ad=t.closest('[data-add]');
+    if(ad){
+      E.itens.push({id:'n'+Date.now().toString(36),g:ad.dataset.add,nome:'Novo item',sub:'',un:'unidade',preco:0,qtd:1,foto:''});
+      desenharGrupos();
+      var novos=raiz.querySelectorAll('.qt.ed .in-nome');
+      var ult=novos[novos.length-1];
+      if(ult){ult.focus();ult.select();}
+      return;
+    }
+    if(t.closest('[data-editar]')){modoEditar(!editando);return;}
+    if(t.closest('[data-link]')){linkar();return;}
+    if(t.closest('[data-copiar]')){copiarResumo();return;}
+    if(t.closest('[data-baixar]')){baixar();return;}
+    if(t.closest('[data-abrir]')){arqProp.click();return;}
+    if(t.closest('[data-zerar]')){zerar();return;}
   });
-  q('[data-conv]').addEventListener('change',function(){
-    var v=parseInt(this.value,10)||D.params.convMin;
-    s.conv=Math.max(D.params.convMin,Math.min(D.params.convMax,v));render();
+  raiz.addEventListener('input',function(e){
+    var el=e.target;
+    if(el.hasAttribute('data-conv')){
+      E.conv=Math.max(P.convMin,Math.min(P.convMax,parseInt(el.value,10)||P.convMin));
+      pintarTudo();return;
+    }
+    var c=el.dataset.c; if(!c)return;
+    var linha=el.closest('[data-qt]'); if(!linha)return;
+    var i=acha(E.itens,linha.dataset.qt); if(!i)return;
+    if(c==='preco'){
+      var n=parseFloat(String(el.value).replace(/\./g,'').replace(',','.'));
+      i.preco=isNaN(n)?0:Math.max(0,Math.round(n*100));
+    }else if(c==='qtd'){
+      var k2=parseInt(el.value,10);
+      i.qtd=isNaN(k2)?0:Math.max(0,k2);
+    }else i[c]=el.value;
+    pintarTudo();
   });
-  montarGrupos();render();
+
+  desenharGrupos();
 })();
 
 </script>
