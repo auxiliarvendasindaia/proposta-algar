@@ -199,42 +199,28 @@ footer img{height:34px;width:auto}
 .inv-topo{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start}
 .inv-topo>div{display:grid;gap:10px}
 .inv-topo .modo{max-width:320px}
-.ed-bt{border:1px solid var(--line);background:var(--bg2);color:var(--ink);padding:11px 18px;border-radius:999px;cursor:pointer;font:600 .92rem Figtree,sans-serif;justify-self:start}
-.ed-bt:hover{border-color:var(--ambar)}
-.ed-bt.on{background:var(--ambar);color:#1A1207;border-color:var(--ambar)}
+.qt{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:16px}
+.qt .n{min-width:0}
 .qt .n .pu{color:var(--ambar);font-size:.84rem}
 .qt .sub-tot{font-weight:600;font-size:1rem;min-width:112px;text-align:right;white-space:nowrap}
 .qt.off{opacity:.45}
 .qt.off .sub-tot{font-weight:400;font-size:.8rem;color:var(--ink3);text-transform:uppercase;letter-spacing:.08em}
 .qt.ed{grid-template-columns:minmax(0,1fr) auto auto auto}
 .qt.ed input{font:inherit;color:var(--ink);background:var(--bg3);border:1px solid var(--line);border-radius:8px;padding:5px 8px}
-.qt.ed input:focus{outline:none;border-color:var(--ambar)}
 .in-nome{width:100%;font-weight:600}
 .in-sub{width:100%;font-size:.86rem}
 .qt.ed .pu{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:4px}
 .in-preco,.in-un{width:112px}
 .in-qtd{width:66px;text-align:center;font:600 1.1rem Figtree,sans-serif}
-.qt-x{border:1px solid var(--line);background:transparent;color:var(--ink3);border-radius:999px;padding:7px 13px;cursor:pointer;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase}
-.qt-x:hover{color:#FF9A9A;border-color:#FF9A9A}
-.add{width:100%;border:1px dashed var(--line);background:transparent;color:var(--ink2);border-radius:12px;padding:13px;cursor:pointer;font:inherit}
-.add:hover{border-color:var(--ambar);color:var(--ambar)}
 .inv-res .tot span[data-pp]{color:var(--ambar)}
-.inv-msg{font-size:.86rem;color:var(--ink2);line-height:1.45}
-.inv-msg input{width:100%;margin-top:8px;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg3);color:var(--ink);font-size:.8rem}
-@media (max-width:680px){.qt.ed{grid-template-columns:minmax(0,1fr)}.qt .step,.qt .sub-tot,.qt-x{justify-self:start}.qt .sub-tot{text-align:left;min-width:0}}
-.qt{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:16px}
-.qt .n{min-width:0}
-.qt .qtd{font-weight:600;font-size:1.25rem;white-space:nowrap}
-.qt .qtd small{font-size:.76rem;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
-.inv-res .tot span:last-child{color:var(--ambar)}
+@media (max-width:680px){.qt,.qt.ed{grid-template-columns:minmax(0,1fr);row-gap:12px;align-items:start}
+.qt .step,.qt .sub-tot,.qt-x{justify-self:start}.qt .sub-tot{text-align:left;min-width:0}}
 .inv-nota b{color:var(--ink)}
+.inv-acoes{display:flex;flex-wrap:wrap;gap:8px}
+.inv-acoes[hidden]{display:none}
 .ed-link{margin:0;text-align:center}
 .ed-link a{display:inline-block;padding:14px 24px;border-radius:999px;background:var(--bg2);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:600}
 .ed-link a:hover{border-color:var(--ambar);color:var(--ambar)}
-@media (max-width:680px){
-.qt{grid-template-columns:minmax(0,1fr);row-gap:12px;align-items:start}
-.qt .qtd{justify-self:start}
-}
 </style>
 
 </head>
